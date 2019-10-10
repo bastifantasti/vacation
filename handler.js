@@ -14,25 +14,44 @@ async function writePin(pin,val) {
   }
 }
 
+async function getVacation (url) {
+  try {
+    let res = await axios.get(url);
+    console.log(res.data);
+    let data = res.data;
+    return data;
+  }catch(error){
+    console.log(error);
+  }
+}
+
 module.exports.vacation = async (event) => {
   console.log(event);
   const now = moment().tz("Europe/Berlin").format();
   let isVacation = false;
+  let isFree = false;
   let vacationName = 'None';
+  let url = 'https://ferien-api.de/api/v1/holidays/'+STATE+'/'+moment().year();
+  const vacations = await getVacation(url);
 
-  const vacations = await axios.get('https://ferien-api.de/api/v1/holidays/'+STATE+'/'+moment().year());
-
-  for(let i in vacations.data){
-    if(moment(now).isBetween(vacations.data[i].start, vacations.data[i].end)){
+  for(let i in vacations){
+    if(moment(now).isBetween(vacations[i].start, vacations[i].end)){
       isVacation = true;
-      vacationName = vacations.data[i].name,
-      console.log(" F E R I E N ");
-      console.log(vacationName);
+      vacationName = vacations[i].name;
     }
   }
 
+  url = 'https://ipty.de/feiertag/api.php?do=isFeiertag&datum='+moment().format("DD-MM-YYYY")+'&loc='+STATE;
+
+
+  const freeday = await getVacation(url);
+  if(isVacation || freeday === 1){
+    isFree = true;
+  }
+
   return {
-      message: isVacation,
-      vacation: vacationName
+      vacation: isVacation,
+      freeday: freeday,
+      isFree: isFree
   };
 };

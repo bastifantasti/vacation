@@ -89,7 +89,7 @@
       "Properties": {
         "Code": {
           "S3Bucket": "deployment.iot.click",
-          "S3Key": "serverless/vacation/prod/1570567517367-2019-10-08T20:45:17.367Z/vacation.zip"
+          "S3Key": "serverless/vacation/prod/1570720656021-2019-10-10T15:17:36.021Z/vacation.zip"
         },
         "FunctionName": "vacation-prod-iotclick",
         "Handler": "handler.vacation",
@@ -123,14 +123,14 @@
         "IamRoleLambdaExecution"
       ]
     },
-    "IotclickLambdaVersionUMIMo25cXOZfFwtZ5IOH7tTzSjIaRechIuZZGamZIk": {
+    "IotclickLambdaVersionHOwmuzG0VcQtYoBjttZOBoDw2DKMQPandcsxSkinBg": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "IotclickLambdaFunction"
         },
-        "CodeSha256": "QoOoMoRSfTaeTqZWvC1e7w7D6UNwaU4VUcjgV2Sng74="
+        "CodeSha256": "3s3IlG+Trlf14ttA8RDZ3rtJLM7xIjKzXpdbXaOV0FM="
       }
     }
   },
@@ -141,7 +141,7 @@
     "IotclickLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "IotclickLambdaVersionUMIMo25cXOZfFwtZ5IOH7tTzSjIaRechIuZZGamZIk"
+        "Ref": "IotclickLambdaVersionHOwmuzG0VcQtYoBjttZOBoDw2DKMQPandcsxSkinBg"
       }
     }
   }
