@@ -24,3 +24,4 @@ Small Lambdafunction to check if the current day is during a german school-vacat
           vacation: vacationName
     }
     ```
+![](https://media.giphy.com/media/xTiTny5Iu35uW0Jl9C/giphy.gif)
