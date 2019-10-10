@@ -32,7 +32,6 @@ module.exports.vacation = async (event) => {
   }
 
   return {
-
       message: isVacation,
       vacation: vacationName
   };
