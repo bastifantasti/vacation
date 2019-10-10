@@ -20,8 +20,8 @@
   },
   "homepage": "https://github.com/iot-at-home/vacation#readme",
   "dependencies": {
-    "axios": "^0.18.0",
-    "moment-timezone": "^0.5.25"
+    "axios": "^0.18.1",
+    "moment-timezone": "^0.5.26"
   },
   "devDependencies": {
     "serverless-secrets-plugin": "^0.1.0"
