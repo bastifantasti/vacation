@@ -1,5 +1,5 @@
 {
-  "name": "athome-to-s3",
+  "name": "vacation",
   "version": "1.0.0",
   "description": "",
   "main": "handler.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/iot-at-home/athome-to-s3.git"
+    "url": "git+https://github.com/iot-at-home/vacation.git"
   },
   "keywords": [
     "iot"
@@ -16,9 +16,9 @@
   "author": "Sebastian Felix Schwarz",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/iot-at-home/athome-to-s3/issues"
+    "url": "https://github.com/iot-at-home/vacation/issues"
   },
-  "homepage": "https://github.com/iot-at-home/athome-to-s3#readme",
+  "homepage": "https://github.com/iot-at-home/vacation#readme",
   "dependencies": {
     "axios": "^0.18.0",
     "moment-timezone": "^0.5.25"

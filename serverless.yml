@@ -11,9 +11,7 @@
 #
 # Happy Coding!
 
-service: air-to-s3 # NOTE: update this with your service name
-plugins:
-  - serverless-secrets-plugin
+service: vacation # NOTE: update this with your service name
 
 provider:
   name: aws
@@ -24,16 +22,12 @@ provider:
   deploymentBucket:
     name: deployment.iot.click
 
-custom:
-  secrets: ${file(secrets.${opt:stage, self:provider.stage}.yml)}
-
 
 functions:
   iotclick:
-    handler: handler.air
+    handler: handler.vacation
     environment:
-      BUCKET: ${self:custom.secrets.BUCKET}
-      BLYNK: ${self:custom.secrets.BLYNK}
+      STATE: NW
     tags: # Function specific tags
       project: sambot
-      sambot: air
+      sambot: vacation
