@@ -22,9 +22,10 @@ Small Lambdafunction to check if the current day is during a german school-vacat
 
     ```json
     {
-          vacation: bool,
-          freeday: bool,
-          isFree: bool
+        weekend: bool,
+        vacation: bool,
+        freeday: bool,
+        isFree: bool
     }
     ```
 ![](https://media.giphy.com/media/xTiTny5Iu35uW0Jl9C/giphy.gif)

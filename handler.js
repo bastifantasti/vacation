@@ -30,6 +30,7 @@ module.exports.vacation = async (event) => {
   const now = moment().tz("Europe/Berlin").format();
   let isVacation = false;
   let isFree = false;
+  let isWeekend = false;
   let vacationName = 'None';
   let url = 'https://ferien-api.de/api/v1/holidays/'+STATE+'/'+moment().year();
   const vacations = await getVacation(url);
@@ -43,13 +44,16 @@ module.exports.vacation = async (event) => {
 
   url = 'https://ipty.de/feiertag/api.php?do=isFeiertag&datum='+moment().format("DD-MM-YYYY")+'&loc='+STATE;
 
-
+  if(moment().day() === 0 || moment().day() === 6){
+    isWeekend = true;
+  }
   const freeday = await getVacation(url);
-  if(isVacation || freeday === 1){
+  if(isVacation || freeday === 1 || isWeekend){
     isFree = true;
   }
 
   return {
+      weekend: isWeekend,
       vacation: isVacation,
       freeday: freeday,
       isFree: isFree
